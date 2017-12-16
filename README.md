@@ -1,1 +1,5 @@
-# cvnew
+# cv
+run:
+
+cmake .
+make

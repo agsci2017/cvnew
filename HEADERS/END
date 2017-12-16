@@ -1,0 +1,62 @@
+
+
+int main( int argc, char** argv ){
+  
+  Mat frame;
+  
+  #ifdef VIDEO
+  video.open(VIDEO);
+  globalfname=VIDEO;
+  #else
+  video.open(argv[1]);
+  globalfname=string(argv[1]);
+  #endif
+  
+  
+  
+  //video.open("v.mp4");
+  
+  video.read(frame);
+  
+  initFunction(frame);
+  
+  namedWindow("Video",1); 
+  //setMouseCallback("Video", click, NULL);
+  
+  
+  while(true){  
+	  if(video.read(frame)){
+		  
+		  
+	  if(processingFunction(frame)){
+	  } else {
+		  video.close();
+		  break;
+	  }
+		  
+		  
+		  
+		  
+		  
+	  } else {
+		  video.close();
+		  break;
+	  }
+    
+	int key = waitKey(1);
+    
+    if(key==32){
+		keyspace(frame);
+    }
+    
+	if(key==27) {
+		video.close();
+		break;
+	}
+	
+	showFunction(frame);
+	
+}
+	
+  
+}
