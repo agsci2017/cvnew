@@ -4,6 +4,8 @@ int main( int argc, char** argv ){
   
   Mat frame;
   
+  cout<<"LOG: opening file"<<endl;
+  
   #ifdef VIDEO
   video.open(VIDEO);
   globalfname=VIDEO;
@@ -16,19 +18,23 @@ int main( int argc, char** argv ){
   
   //video.open("v.mp4");
   
+  cout<<"LOG: reading frame"<<endl;
+  
   video.read(frame);
   
+  cout<<"LOG: calling START()"<<endl;
   initFunction(frame);
   
-  namedWindow("Video",1); 
+  //namedWindow("Video",1); 
   //setMouseCallback("Video", click, NULL);
   
-  
+  cout<<"LOG: starting LOOP"<<endl;
   while(true){  
 	  if(video.read(frame)){
 		  
 		  
 	  if(processingFunction(frame)){
+	  
 	  } else {
 		  video.close();
 		  break;

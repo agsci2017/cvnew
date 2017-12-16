@@ -2,7 +2,7 @@
 
 #define VIDEO "video.mp4"
 
-
+#deine OK true
 
 START{
 	
@@ -11,6 +11,7 @@ START{
 
 LOOP{
 	
+	return OK;
 }
 
 SHOW{
