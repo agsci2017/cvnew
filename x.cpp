@@ -2,7 +2,7 @@
 
 #define VIDEO "video.mp4"
 
-#deine OK true
+
 
 START{
 	

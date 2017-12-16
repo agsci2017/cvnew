@@ -231,3 +231,5 @@ bool processingFunction(Mat &frame)
 bool showFunction(Mat &frame)
 #define KEYSPACE \
 void keyspace(Mat &frame)
+
+#define OK true
