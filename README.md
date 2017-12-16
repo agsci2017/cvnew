@@ -1,5 +1,8 @@
 # cv
 run:
 
+```
 cmake .
+
 make
+```
