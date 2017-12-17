@@ -19,14 +19,39 @@
 #define SCALE(...) MACRO_CHOOSER(__VA_ARGS__)(__VA_ARGS__)
 
 
+/*
+RECTS(X)
+SCALE(DIM)
+SCALE(FRAME,DIM)
+*/
 
 
+
+string rand_str() {
+	
+	std::ostringstream oss;
+	oss << std::hex << (256*256*256+(rand() % (256*256*256)));
+	oss << std::hex << (256*256*256+(rand() % (256*256*256)));
+	oss << std::hex << (256*256*256+(rand() % (256*256*256)));
+	oss << std::hex << (256*256*256+(rand() % (256*256*256)));
+	return oss.str();
+}
 
 
 CascadeClassifier casc;
 vector<Rect2i> cars;
 
+
+
+
+
+
 START{
+	
+	namedWindow("img",1);  
+	//setMouseCallback("img", click, NULL);
+	
+	
 	casc.load("cascade.xml");
 	
 }
@@ -34,8 +59,8 @@ START{
 LOOP{
 	SCALE(0.5)
 	
-	casc.detectMultiScale(frame, cars, 2, 7, 0,
-			cv::Size(20, 20), cv::Size(48, 48));
+	casc.detectMultiScale(frame, cars, 5, 5, 0,
+			cv::Size(18, 18), cv::Size(32, 32));
 	cout<<cars.size()<<endl;
 	
 	RECTS(cars)
