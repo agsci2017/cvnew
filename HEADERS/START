@@ -252,3 +252,12 @@ void keyspace(Mat &frame)
 
 #define SCALE(...) MACRO_CHOOSER(__VA_ARGS__)(__VA_ARGS__)
 
+string RANDHEX() {
+	std::ostringstream oss;
+	oss << std::hex << (256*256*256+(rand() % (256*256*256)));
+	oss << std::hex << (256*256*256+(rand() % (256*256*256)));
+	oss << std::hex << (256*256*256+(rand() % (256*256*256)));
+	oss << std::hex << (256*256*256+(rand() % (256*256*256)));
+	return oss.str();
+}
+
