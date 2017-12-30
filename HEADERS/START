@@ -180,6 +180,9 @@ void points(Mat& frame, vector<Rect2d> r){
 }
 }
 
+
+
+/*
 void rect(Mat& frame, Rect2d r){
 
         rectangle( frame, r, Scalar( 255, 0, 200 ), 2, 1 ); 
@@ -193,6 +196,7 @@ void rects(Mat& frame, vector<Rect2d> r){
         rectangle( frame, r[i], Scalar( 255, 0, 200 ), 2, 1 ); 
 }
 }
+*/
 
 vector<string> mascnames;
 vector<Mat> mascmats;
@@ -236,6 +240,9 @@ void keyspace(Mat &frame)
 
 
 
+#define RECT(R) rectangle( frame, R, Scalar( 255, 0, 200 ), 2, 1 );
+
+
 #define CONCAT_(x,y) x##y
 #define CONCAT(x,y) CONCAT_(x,y)
 
@@ -261,3 +268,5 @@ string RANDHEX() {
 	return oss.str();
 }
 
+#define F(FVAR) ofstream FVAR;
+#define FOPEN(FVAR,FNAME)  FVAR.open(FNAME);
